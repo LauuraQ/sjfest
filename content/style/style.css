@@ -1,0 +1,223 @@
+@import url(null-style.css);
+
+:root {
+    --color-text: #1A1B18;
+    --color-white: #ffffff;
+    --color-lite-blue: #EDF3FF;
+    --color-blue: #1E6AFF;
+
+}
+
+
+@font-face {
+    font-family: 'Circe';
+    src: url('../fonts/circe-bold.woff2') format('woff2'),
+        url('../fonts/circe-bold.woff') format('woff'),
+        url('../fonts/circe-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe';
+    src: url('../fonts/circe-regular.woff2') format('woff2'),
+        url('../fonts/circe-regular.woff') format('woff'),
+        url('../fonts/circe-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe';
+    src: url('../fonts/circe-light.woff2') format('woff2'),
+        url('../fonts/circe-light.woff') format('woff'),
+        url('../fonts/circe-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+body {
+    height: 10000px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 110%;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 120%;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+h6 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+a:hover {
+    color: var(--color-blue);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: 24px 0 26px 0;
+    font-family: 'Circe';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    background-color: none;
+}
+
+.header--scrolled {
+    background-color: var(--color-white);
+    box-shadow: 0px 4px 12px rgba(30, 106, 255, 0.12);
+}
+
+.wrapper {
+    max-width: 1175px;
+    margin: 0 auto;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    max-height: 40px;
+    height: 100%;
+}
+
+.header__menu {
+    display: flex;
+    gap: 32.5px;
+    align-items: center;
+    max-height: 30px;
+}
+
+.header__menu-item {
+    cursor: pointer;
+}
+
+.header__menu-item--submenu {
+    position: relative;
+}
+
+.header__link {
+    transition: color 0.2s ease;
+}
+
+.header__menu-item--submenu:hover {
+    .header__arrow {
+        color: var(--color-blue);
+        transition: color 0.2s ease;
+    }
+
+    .header__link {
+        color: var(--color-blue);
+    }
+}
+
+.header__menu-item span:hover {
+    color: var(--color-blue);
+}
+
+.header__submenu {
+    position: absolute;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header__submenu-item {
+    width: 180px;
+}
+
+.header__submenu-link {
+    display: flex;
+    padding-top: 8px;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.header__submenu-link:hover {
+    background-color: var(--color-lite-blue);
+}
+
+.header__arrow {
+    margin-left: 6px;
+}
+
+.header__authorization-group {
+    display: flex;
+    gap: 18px;
+}
+
+.header__btn {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 100%;
+}
+
+.header__btn--login {
+    color: var(--color-white);
+    transition: color 0.2s ease;
+}
+
+.header__btn--login:hover {
+    color: var(--color-text);
+}
+
+.header--scrolled .header__btn--login {
+    color: var(--color-text);
+}
+
+.header__btn--registration {
+    color: var(--color-blue);
+    padding: 14px 24px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.header__btn--registration:hover {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}
+
+.header--scrolled .header__btn--registration {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}
