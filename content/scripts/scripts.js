@@ -20,4 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
         menuDropDown.classList.toggle('header__menu-item--submenu--open');
     })
 
+    const swiper = new Swiper('.mySwiper', {
+        enabled: true,
+        slidesPerView: 2, // На мобилке 2 колонки
+        loop: true,
+
+        // Включаем функции сразу
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+
+        breakpoints: {
+            // Отключаем свайп и автоплей на ПК (от 1320px)
+            1320: {
+                enabled: false, // ПОЛНОСТЬЮ выключает работу скрипта Swiper
+            }
+        }
+    });
 });

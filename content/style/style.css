@@ -8,7 +8,8 @@
     --color-blue: #1E6AFF;
     --color-border: rgba(26, 27, 24, 0.3);
     --color-btn: #1A1B18;
-    --color-btn-bg: ;
+    --color-btn-bg: #1A1B18;
+    --color-backgroung-block: #131519;
 }
 
 @font-face {
@@ -371,17 +372,95 @@ a:hover {
     color: var(--color-white);
     border-radius: 10px;
     padding: 6.5px 30px;
+    transition: background-color 0.3s ease;
 }
 
+.hero__btn-accept:hover {
+    background-color: var(--color-btn-bg);
+
+}
 
 .hero__image-container {
     position: relative;
-
-
 }
 
 .hero__image {
     position: absolute;
     right: -500px;
     top: -150px;
+}
+
+.clients {
+    color: var(--color-white);
+    background-color: var(--color-backgroung-block);
+    border-radius: 32px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 660px;
+}
+
+.clients__title {
+    max-width: 661px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.clients__subtitle {
+    margin-bottom: 60px;
+}
+
+
+
+.clients__img {
+    max-width: 112px;
+    text-align: center;
+
+    .clients__active {
+        display: none;
+    }
+}
+
+.clients__img:hover {
+    .clients__unactive {
+        display: none;
+    }
+
+    .clients__active {
+        display: block;
+    }
+}
+
+.swiper {
+    max-width: 1056px;
+    width: 100%;
+
+    height: auto;
+    margin: 0 auto;
+}
+
+.swiper-wrapper {
+    max-width: 100%;
+}
+
+.swiper-slide {
+    max-width: 112px;
+    max-height: 78px;
+}
+
+.swiper-pagination {
+    display: block !important;
+}
+
+/* Десктопная сетка (от 1320px и выше) */
+@media (min-width: 1320px) {
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
 }
