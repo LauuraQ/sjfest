@@ -96,6 +96,21 @@ a:hover {
     color: var(--color-blue);
 }
 
+li {
+    margin-bottom: 5px;
+}
+
+li::before {
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    margin-right: 8px;
+    height: 9px;
+    width: 11px;
+    background-repeat: no-repeat;
+    background-image: url(../ico/ul_shevron.png);
+}
+
 .btn::before {
     content: "";
     opacity: 0;
@@ -138,6 +153,14 @@ a:hover {
     letter-spacing: 0;
     background-color: none;
     z-index: 999;
+
+    li {
+        margin-bottom: 0;
+    }
+
+    li::before {
+        display: none;
+    }
 }
 
 .header a {
@@ -399,6 +422,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     max-height: 660px;
+    margin-bottom: 160px;
 }
 
 .clients__title {
@@ -410,8 +434,6 @@ a:hover {
 .clients__subtitle {
     margin-bottom: 60px;
 }
-
-
 
 .clients__img {
     max-width: 112px;
@@ -431,6 +453,231 @@ a:hover {
         display: block;
     }
 }
+
+
+
+
+
+
+
+.advantages {
+    background-color: #E2F6FB;
+    border-radius: 32px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}
+
+.advantages__nav-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 50px;
+
+    span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        padding: 9px 16px;
+        background-color: none;
+        transition: background-color 0.3s ease;
+        border-radius: 16px;
+    }
+
+    span:hover {
+        background-color: #ceecf7;
+
+        display: block;
+    }
+
+    span.selected {
+        background-color: #4DD4FF;
+    }
+}
+
+.advantages__tab {
+    display: none;
+}
+
+.advantages__tab.active {
+    display: block;
+}
+
+
+.advantages__title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+.advantages__tab {}
+
+.advantages__card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.advantages__card {
+    max-width: 354px;
+
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+.advantages__image {
+    margin-bottom: 25px;
+    margin-right: auto;
+}
+
+.advantages__nav {
+    font-weight: bold;
+}
+
+.advantages__title-marks {
+    font-size: 50px;
+}
+
+.advantages__title-ico::after {
+    content: "";
+    width: 63px;
+    height: 71px;
+    background-size: contain;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-repeat: no-repeat;
+
+}
+
+.advantages__title-ico--fire::after {
+    background-image: url(../ico/advantages_logo/icon_fire.png);
+    width: 50px;
+    height: 57px;
+}
+
+.advantages__title-ico--marks::after {
+    background-image: url(../ico/advantages_logo/icon_marks.png);
+}
+
+
+
+
+.advantages__subtitle {
+    font-size: 16px;
+    max-width: 813px;
+}
+
+.advantages__subtitle--centred {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.advantages__btn-try {
+    padding: 22px 65.5px;
+    margin-top: 82px;
+}
+
+.economy {
+    background-color: #F3E6FB;
+    border-radius: 32px;
+    padding: 60px 45px;
+    display: flex;
+    gap: 20px;
+}
+
+.economy__info-container {
+    max-width: 451px;
+}
+
+.economy__indicator-container {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    opacity: 0.8;
+    margin: 0 auto 25px 0;
+}
+
+.economy__indicator {
+    padding: 6px 16px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+}
+
+.economy__indicator--blue {
+    color: #1E6AFF;
+}
+
+.economy__indicator--green {
+    color: #11BA91;
+}
+
+.economy__title {
+    margin-bottom: 20px;
+    font-weight: bold;
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.economy__sabtitle {
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.economy__btn {
+    background-color: unset;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 20px;
+
+    &:hover {}
+}
+
+
+.economy__img {
+    max-width: 613px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .swiper {
     max-width: 1056px;

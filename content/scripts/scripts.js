@@ -20,25 +20,71 @@ document.addEventListener("DOMContentLoaded", () => {
         menuDropDown.classList.toggle('header__menu-item--submenu--open');
     })
 
-    const swiper = new Swiper('.mySwiper', {
-        enabled: true,
-        slidesPerView: 2, // На мобилке 2 колонки
+    const navsAdvantagesBtns = document.querySelectorAll('.advantages__nav');
+    const tabsAdvantages = document.querySelectorAll('.advantages__tab');
+
+
+
+    const allNavs = document.querySelectorAll('.advantages__nav');
+    const allTabs = document.querySelectorAll('.advantages__tab');
+
+    for (let currentBtn = 0; currentBtn < allNavs.length; currentBtn++) {
+        allNavs[currentBtn].addEventListener('click', () => {
+            for (let currentTab = 0; currentTab < 0; currentTab++)
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
         loop: true,
 
-        // Включаем функции сразу
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
         autoplay: {
             delay: 5000,
-            disableOnInteraction: false,
+            enabled: false,
         },
 
         breakpoints: {
-            // Отключаем свайп и автоплей на ПК (от 1320px)
+            1920: {
+                slidesPerView: 9,
+                grid: {
+
+                    rows: 3,
+                    fill: 'row',
+                },
+            },
             1320: {
-                enabled: false, // ПОЛНОСТЬЮ выключает работу скрипта Swiper
+                slidesPerView: 6,
+                grid: {
+                    rows: 3,
+                    fill: 'row',
+                }, pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                }, autoplay: {
+                    enabled: true,
+                },
+            },
+            600: {
+                slidesPerView: 2,
+                grid: {
+                    rows: 3,
+                    fill: 'row',
+                },
             }
         }
     });
