@@ -638,14 +638,6 @@ li::before {
     line-height: 1.4;
 }
 
-.economy__btn {
-    background-color: unset;
-    color: var(--color-text);
-    font-weight: 700;
-    font-size: 20px;
-
-    &:hover {}
-}
 
 
 .economy__img {
@@ -654,6 +646,36 @@ li::before {
 }
 
 
+
+.economy__btn {
+    background-color: #F3E6FB;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 18px 24px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #E6BBFF;
+    }
+
+    &::after {
+        content: "";
+        background-image: url(../ico/arrow.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 21px;
+        height: 19px;
+        margin-left: 16px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+        transform: translateX(5px);
+
+    }
+}
 
 
 
