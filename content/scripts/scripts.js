@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let currentBtn = 0; currentBtn < allNavs.length; currentBtn++) {
         allNavs[currentBtn].addEventListener('click', () => {
             for (let currentTab = 0; currentTab < 0; currentTab++)
+                ;
         })
-    }
+    };
 
 
 
