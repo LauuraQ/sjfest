@@ -28,6 +28,7 @@
         url('../fonts/circe-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+
 }
 
 @font-face {
@@ -36,6 +37,13 @@
         url('../fonts/circe-light.woff') format('woff'),
         url('../fonts/circe-light.ttf') format('truetype');
     font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Christopher';
+    src: url('../fonts/Christopher.otf') format('opentype');
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -768,6 +776,110 @@ li {
     background-color: #FFE9BC;
 
 }
+
+
+
+
+
+
+
+.sell {
+    border-radius: 36px;
+    background-color: #ECEDFE;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: 50px;
+
+    }
+}
+
+.sell__subtitle {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../ico/sell/sell_hr.png);
+        height: 19px;
+        width: 98px;
+        left: 60px;
+        top: 25px;
+    }
+
+
+    span {
+        font-family: 'Christopher';
+        font-weight: 500;
+        font-size: 64px;
+        text-underline-offset: -5px;
+        line-height: 1;
+        transform: translateY(-4px);
+        margin-left: 9px;
+
+    }
+}
+
+
+.sell__info-container {
+    padding: 50px 0 50px 60px;
+    max-width: 575px;
+    width: 100%;
+}
+
+.sell__form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 51px;
+}
+
+.sell__input {
+    max-width: 324px;
+    height: 58px;
+    width: 100%;
+    text-align: start;
+    border: 1px solid var(--color-border);
+    box-shadow: 0px 8px 16px rgba(41, 41, 41, 0.08);
+    border-radius: 16px;
+    padding: 19px 24px;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.sell__btn {
+    padding: 19px 28px;
+}
+
+.sell__img-container {
+    position: relative;
+    overflow: visible;
+    max-width: 628px;
+}
+
+.sell__backgound {
+    border-radius: 36px;
+
+}
+
+.sell__img {
+    position: absolute;
+    left: 0;
+    vertical-align: middle;
+    align-self: center;
+}
+
+
+
+
 
 
 
