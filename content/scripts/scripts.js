@@ -20,6 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
         menuDropDown.classList.toggle('header__menu-item--submenu--open');
     })
 
+
+    const menuOpen = document.querySelector('.header__burger');
+    const menuClose = document.querySelector('header__cross');
+
+    menuOpen.addEventListener('click', () => {
+
+        menuOpen.classList.una
+
+    });
+
+
+
+
+
+
+
+
+
+
+
     const navsAdvantagesBtns = document.querySelectorAll('.advantages__nav');
     const tabsAdvantages = document.querySelectorAll('.advantages__tab');
 

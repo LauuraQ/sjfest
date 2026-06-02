@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <header class="header" style="display: none;">
+    <header class="header">
         <div class="header__wrapper wrapper">
             <a href="#" class="header__logo-container">
-                <img class="header__logo" src="content/ico/Logo.svg" alt="Логотип Data Hub">
+                <img class="header__logo" src="./content/ico/Logo.svg" alt="Логотип Data Hub">
             </a>
             <ul class="header__menu">
                 <li class="header__menu-item">
@@ -55,12 +55,70 @@
                     <a class="header__link" href="#">Блог</a>
                 </li>
             </ul>
-            <div class="header__authorization-group">
+            <div class="header__authorization">
                 <button class="header__btn header__btn--login">Вход</button>
                 <button class="header__btn header__btn--registration">Регистрация</button>
             </div>
+
+            <img class="header__burger" src="./content/ico/header/icon_burger.svg" alt="Иконка меню">
+
+
+
+            <div class="header__mobile">
+                <div class="header__box">
+                    <a href="#" class="header__logo-container">
+                        <img class="header__logo" src="./content/ico/Logo.svg" alt="Логотип Data Hub">
+                    </a>
+                    <img class="header__cross" src="./content/ico/header/icon_cross.svg" alt="Иконка закрыть">
+                </div>
+
+                <ul class="header__menu header__menu--overlay">
+                    <li class="header__menu-item">
+                        <a class="header__link" href="#">Продукт</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item--submenu">
+                        <span class="header__link">Инструменты</span>
+                        <svg class="header__arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.75 0.75L5.75 5.75L0.75 0.75" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <ul class="header__submenu">
+                            <li class="header__submenu-item">
+                                <a class="header__submenu-link" href="#">Smart BI</a>
+                            </li>
+                            <li class="header__submenu-item">
+                                <a class="header__submenu-link" href="#">Smart Hyper Cloud</a>
+                            </li>
+                            <li class="header__submenu-item">
+                                <a class="header__submenu-link" href="#">Smart ETL</a>
+                            </li>
+                            <li class="header__submenu-item">
+                                <a class="header__submenu-link" href="#">Calltracking</a>
+                            </li>
+                            <li class="header__submenu-item">
+                                <a class="header__submenu-link" href="#">Emailracking</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__link" href="#">Тарифы</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__link" href="#">Контакты</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__link" href="#">Блог</a>
+                    </li>
+                </ul>
+                <div class="header__authorization">
+                    <button class="header__btn header__btn--login">Вход</button>
+                    <button class="header__btn header__btn--registration">Регистрация</button>
+                </div>
+            </div>
         </div>
     </header>
+
     <section class="hero" style="display: none;">
         <div class="wrapper hero__wrapper">
             <div class="hero__info">
@@ -494,22 +552,23 @@
         </div>
     </section>
 
-    <section class="sell wrapper" style="display: none;">
-        <div class="sell__info-container">
+    <section class="sell wrapper">
+        <!-- Адаптировано -->
+        <div class="sell__info">
             <h2 class="sell__title">
                 Повышайте продажи. Экономьте на рекламе.
             </h2>
             <p class="sell__subtitle">Уже сегодня <span> сейчас!</span></p>
             <div class="sell__form">
                 <input class="sell__input" type="email" placeholder="E-mail">
-                <div class="sell__btn-container">
-                    <button class="sell__btn btn">Попробовать</button>
-                </div>
+                <button class="sell__btn btn">Попробовать</button>
             </div>
         </div>
-        <div class="sell__img-container">
-            <img class="sell__backgound" src="./content/ico/sell/sell_background.png" alt="Градиент">
+        <div class="sell__container">
+            <img class="sell__background" src="./content/ico/sell/sell_background.png" alt="Градиент">
             <img class="sell__img" src="./content/ico/sell/sell_graph.png" alt="Графики">
+            <img class="sell__background sell__background--mobile" src="./content/ico/sell/sell_background-new.png"
+                alt="Градиент с графиками">
         </div>
     </section>
 
@@ -571,11 +630,12 @@
         </div>
     </section>
 
-    <section class="integration" style="display: none;">
+    <section class="integration">
+        <!-- Адаптировано -->
         <div class="integration__wrapper wrapper">
             <div class="integration__info">
                 <h2 class="integration__title">250 интеграций
-                    под&nbsp;любые&nbsp;потребности</h2>
+                    под&nbsp;любые потребности</h2>
                 <p class="integration__description">Наш сервис уже имеет все необходимые интеграции
                     с вашими системами данных от стандартных Битрикс24, Tilda
                     и Яндекс.Директ, до любых других систем</p>
@@ -683,7 +743,7 @@
         <p class="income__subtitle">
             за первые 4 месяца работы с платформой сквозной аналитики Smart Data Hub™
         </p>
-        <div class="income__btn-container">
+        <div class="income__container">
             <button class="income__btn btn">Покажите мне как</button>
             <button class=" income__btn-transparent">Попробовать бесплатно</button>
         </div>

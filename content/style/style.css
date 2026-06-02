@@ -168,7 +168,6 @@ li {
         opacity: 1;
     }
 
-
     @media (max-width: 344px) {
         font-size: 16px;
     }
@@ -233,6 +232,9 @@ li {
     li::before {
         display: none;
     }
+
+
+    @media (max-width:1000px) {}
 }
 
 .header a {
@@ -253,6 +255,8 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: relative;
 }
 
 .header__logo {
@@ -265,6 +269,10 @@ li {
     gap: 32.5px;
     align-items: center;
     max-height: 30px;
+
+    @media (max-width:1000px) {
+        display: none;
+    }
 }
 
 .header__menu-item {
@@ -330,9 +338,13 @@ li {
     margin-left: 6px;
 }
 
-.header__authorization-group {
+.header__authorization {
     display: flex;
     gap: 18px;
+
+    @media (max-width:1000px) {
+        display: none;
+    }
 }
 
 .header__btn {
@@ -379,6 +391,31 @@ li {
         color: var(--color-white);
         background-color: var(--color-blue);
     }
+}
+
+
+
+.header__burger {
+    display: none;
+    width: 40px;
+
+    @media (max-width:1000px) {
+        display: block;
+    }
+}
+
+
+.header__mobile {
+    position: absolute;
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.header__cross {
+    display: none;
 }
 
 .hero {
@@ -692,7 +729,6 @@ li {
         max-width: 100%;
         text-align: center;
     }
-
 }
 
 .economy__indicator-container {
@@ -961,14 +997,39 @@ li {
     justify-content: space-between;
     margin-bottom: 160px;
 
-    h2 {
-        margin-bottom: 25px;
-        font-weight: 700;
-        font-size: 50px;
+    @media (max-width: 1176px) {
+        margin-bottom: 60px;
+        flex-direction: column;
+        align-items: center;
     }
 
     @media (max-width: 1024px) {
         margin-bottom: 60px;
+    }
+}
+
+.sell__title {
+
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 50px;
+
+    @media (max-width: 1176px) {
+        text-align: center;
+        justify-self: center;
+    }
+
+    @media (max-width: 1132px) {
+        max-width: 700px;
+    }
+
+    @media (max-width: 643px) {
+        max-width: 513px;
+        font-size: 40px;
+    }
+
+    @media (max-width: 340px) {
+        font-size: 28px;
     }
 }
 
@@ -988,6 +1049,10 @@ li {
         width: 98px;
         left: 60px;
         top: 25px;
+
+        @media (max-width: 409px) {
+            transform: translateY(-18px);
+        }
     }
 
     span {
@@ -998,18 +1063,46 @@ li {
         line-height: 1;
         transform: translateY(-4px);
         margin-left: 9px;
+
+
+
+    }
+
+    @media (max-width: 409px) {
+        flex-direction: column;
+        margin-bottom: 20px;
     }
 }
 
-.sell__info-container {
+.sell__info {
     padding: 50px 0 50px 60px;
     max-width: 575px;
     width: 100%;
+
+    @media (max-width: 1176px) {
+        max-width: 100%;
+        padding: 0 45px 60px 45px;
+        text-align: center;
+        order: 2;
+    }
+
+    @media (max-width: 431px) {
+        padding: 0 20px 20px 20px;
+    }
 }
 
 .sell__form {
     display: flex;
     gap: 10px;
+
+    @media (max-width: 1176px) {
+        justify-content: center;
+    }
+
+    @media (max-width: 643px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .sell__input {
@@ -1027,16 +1120,30 @@ li {
 
 .sell__btn {
     padding: 19px 28px;
+
+    @media (max-width: 643px) {
+        padding: 22px 0;
+        max-width: 324px;
+        width: 100%;
+    }
 }
 
-.sell__img-container {
+.sell__container {
     position: relative;
     overflow: visible;
     max-width: 628px;
+
+    @media (max-width: 1176px) {
+        max-width: 100%;
+    }
 }
 
-.sell__backgound {
+.sell__background {
     border-radius: 32px;
+
+    @media (max-width: 1176px) {
+        display: none;
+    }
 }
 
 .sell__img {
@@ -1044,6 +1151,20 @@ li {
     left: 0;
     vertical-align: middle;
     align-self: center;
+    max-width: 100%;
+
+    @media (max-width: 1176px) {
+        display: none;
+    }
+}
+
+.sell__background--mobile {
+    display: none;
+    max-width: 100%;
+
+    @media (max-width: 1176px) {
+        display: block;
+    }
 }
 
 .cases {
@@ -1108,6 +1229,7 @@ li {
     bottom: 0;
     right: 0;
 }
+
 
 .cases__info {
     padding: 0 30px 33px 30px;
@@ -1180,9 +1302,11 @@ li {
     overflow: hidden;
     height: 440px;
     margin-bottom: 160px;
+    box-shadow: 0px 0px 50px -15px rgba(34, 60, 80, 0.3) inset;
 
     @media (max-width: 1024px) {
         margin-bottom: 60px;
+        height: 540px;
     }
 }
 
@@ -1190,11 +1314,27 @@ li {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    gap: 50px;
+
+    @media (max-width: 1075px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 431px) {
+        padding: 0 20px;
+        gap: 20px;
+    }
 }
 
 .integration__info {
-    max-width: 430px;
+    max-width: 436px;
     margin: auto 0;
+
+    @media (max-width: 1075px) {
+        text-align: center;
+        max-width: 100%;
+        order: 2;
+    }
 }
 
 .integration__title {
@@ -1213,18 +1353,43 @@ li {
         height: 90px;
         display: block;
         margin-bottom: 26px;
+
+        @media (max-width: 402px) {
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 1075px) {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+
+        & .integration__spin-line:nth-child(n+5) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 503px) {
+
+        & .integration__spin-line:nth-child(n+4) {
+            display: none;
+        }
     }
 }
 
 .integration__spin-line {
     display: flex;
     flex-direction: column;
-    animation: scrollUp 1s linear infinite;
+    animation: scrollUp 20s linear infinite;
     height: max-content;
 }
 
 .integration__spin-line--bottom {
-    animation: scrollDown 1s linear infinite;
+    animation: scrollDown 20s linear infinite;
 }
 
 @keyframes scrollUp {
@@ -1384,21 +1549,28 @@ li {
     }
 }
 
-.income__btn-container {
+.income__container {
     display: flex;
     justify-content: center;
     gap: 24px;
 
     @media (max-width:625px) {
         flex-direction: column;
+        align-items: center;
     }
 }
 
 .income__btn {
     padding: 22px 56.5px;
 
+    @media (max-width:625px) {
+        max-width: 320px;
+        width: 100%;
+    }
+
     @media (max-width: 340px) {
         padding: 22px 0;
+
     }
 }
 
