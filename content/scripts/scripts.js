@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Переменные
     const header = document.querySelector('.header');
     const menuDropDown = document.querySelector('.header__menu-item--submenu');
-    const menuDropDownOpen = document.querySelector('.header__menu-item--submenu--open');
+    const menuDropDownOpen = document.querySelector('.header__submenu');
 
 
-    // Функции
-    //Отрисовка задника для хедера и смена цвета кнопок
+    //Отрисовка задника для хедера и смена цвета кнопок при прокрутке
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
             header.classList.add('header--scrolled');
@@ -15,45 +14,48 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove('header--scrolled');
         }
     })
+
     //Открытие-Закрытие выпадающего в меню навигации
+
     menuDropDown.addEventListener('click', () => {
-        menuDropDown.classList.toggle('header__menu-item--submenu--open');
+        menuDropDownOpen.classList.toggle('active');
     })
 
-
-    const menuOpen = document.querySelector('.header__burger');
-    const menuClose = document.querySelector('header__cross');
-
-    menuOpen.addEventListener('click', () => {
-
-        menuOpen.classList.una
-
+    menuDropDownOpen.addEventListener('click', (event) => {
+        event.stopPropagation();
     });
 
+    // Открытие-закрытие бургер-меню
+    const menuOpen = document.querySelector('.header__burger');
+    const mobileMenu = document.querySelector('.header__mobile');
+    const bgOverlay = document.querySelector('.header__overlay')
+    const menuClose = document.querySelector('.header__cross');
 
+    menuOpen.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        bgOverlay.classList.toggle('active');
+    });
 
+    menuClose.addEventListener('click', () => {
 
+        mobileMenu.classList.toggle('active');
+        bgOverlay.classList.toggle('active');
+    });
+    // 
 
+    // Открытие-закрытие вложенного меню
+    const headerMenuItem = document.querySelector('.header__menu-item--mobile');
+    const subMenu = document.querySelector('.header__submenu--mobile');
 
+    headerMenuItem.addEventListener('click', () => {
+        subMenu.classList.toggle('active');
+    });
+    // 
 
+    subMenu.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
 
-
-
-
-    const navsAdvantagesBtns = document.querySelectorAll('.advantages__nav');
-    const tabsAdvantages = document.querySelectorAll('.advantages__tab');
-
-
-
-    const allNavs = document.querySelectorAll('.advantages__nav');
-    const allTabs = document.querySelectorAll('.advantages__tab');
-
-    for (let currentBtn = 0; currentBtn < allNavs.length; currentBtn++) {
-        allNavs[currentBtn].addEventListener('click', () => {
-            for (let currentTab = 0; currentTab < 0; currentTab++)
-                ;
-        })
-    };
 
 
 

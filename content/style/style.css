@@ -222,7 +222,7 @@ li {
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0;
-    background-color: none;
+    background-color: transparent;
     z-index: 999;
 
     li {
@@ -251,11 +251,25 @@ li {
     box-shadow: 0px 4px 12px rgba(30, 106, 255, 0.12);
 }
 
+.header__overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
 .header__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     position: relative;
 }
 
@@ -272,35 +286,39 @@ li {
 
     @media (max-width:1000px) {
         display: none;
+        gap: 10px;
+        text-align: start;
     }
 }
 
 .header__menu-item {
     cursor: pointer;
-}
 
-.header__menu-item--submenu {
-    position: relative;
+    @media (max-width:1000px) {
+        padding: 11px 10px;
+    }
 }
 
 .header__link {
     transition: color 0.2s ease;
-}
 
-.header__menu-item--submenu:hover {
-    .header__arrow {
-        color: var(--color-blue);
-        transition: color 0.2s ease;
-    }
-
-    .header__link {
-        color: var(--color-blue);
+    @media (max-width:1000px) {
+        font-size: 18px;
     }
 }
 
-.header__menu-item--submenu--open {
-    .header__submenu {
-        display: block;
+.header__menu-item--submenu {
+    position: relative;
+
+    &:hover {
+        .header__arrow {
+            color: var(--color-blue);
+            transition: color 0.2s ease;
+        }
+
+        .header__link {
+            color: var(--color-blue);
+        }
     }
 }
 
@@ -317,10 +335,38 @@ li {
     left: 50%;
     transform: translateX(-50%);
     display: none;
+
+    &.active {
+        display: block;
+    }
+
+    @media (max-width:1000px) {
+        position: static;
+        transform: translateX(0);
+        flex-direction: column;
+        text-align: start;
+    }
+}
+
+.header__submenu--mobile {
+    display: none;
+
+    &.active {
+        display: flex;
+    }
 }
 
 .header__submenu-item {
     width: 180px;
+
+    @media (max-width:1000px) {
+        padding: 11px 0px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        border-bottom: 1px solid #EDF3FF;
+        width: 100%;
+    }
 }
 
 .header__submenu-link {
@@ -328,10 +374,18 @@ li {
     padding-top: 8px;
     justify-content: center;
     transition: background-color 0.2s ease;
-}
 
-.header__submenu-link:hover {
-    background-color: var(--color-lite-blue);
+    &:hover {
+        background-color: var(--color-lite-blue);
+
+        @media (max-width:1000px) {
+            background-color: transparent;
+        }
+    }
+
+    @media (max-width:1000px) {
+        justify-content: normal;
+    }
 }
 
 .header__arrow {
@@ -348,7 +402,6 @@ li {
 }
 
 .header__btn--mobile {
-
     &.header__btn--login {
         color: var(--color-text);
         padding: 13px 0;
@@ -362,9 +415,9 @@ li {
         padding: 13px 0;
         width: 100%;
         background-color: var(--color-blue);
+        border-radius: 16px;
     }
 }
-
 
 .header__btn {
     font-size: 16px;
@@ -412,8 +465,6 @@ li {
     }
 }
 
-
-
 .header__burger {
     display: none;
     width: 40px;
@@ -423,38 +474,57 @@ li {
     }
 }
 
-
 .header__mobile {
     position: absolute;
     background: var(--color-white);
-    display: flex;
+    display: none;
     flex-direction: column;
     text-align: center;
     width: 50vw;
     right: 0;
     top: 0;
-    padding: 16px 16px;
+    padding: 24px 20px;
+    height: fit-content;
+
+    &.active {
+        display: flex;
+    }
+
+    @media (max-width:500px) {
+        width: 100%;
+    }
 }
 
 .header__box {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .header__menu--overlay {
     flex-direction: column;
+    max-height: 100%;
+    margin-bottom: 20px;
+
+    @media (max-width:1000px) {
+        display: block;
+        border-bottom: 1px solid #EDF3FF;
+        width: 100%;
+    }
 }
 
-.header__cross {}
-
+.header__cross {
+    height: 32px;
+}
 
 .header__authorization--mobile {
     flex-direction: column;
     gap: 10px;
 
+    @media (max-width:1000px) {
+        display: flex;
+    }
 }
-
-
 
 .hero {
     display: flex;
@@ -1047,7 +1117,6 @@ li {
 }
 
 .sell__title {
-
     margin-bottom: 25px;
     font-weight: 700;
     font-size: 50px;
@@ -1101,9 +1170,6 @@ li {
         line-height: 1;
         transform: translateY(-4px);
         margin-left: 9px;
-
-
-
     }
 
     @media (max-width: 409px) {
