@@ -347,6 +347,25 @@ li {
     }
 }
 
+.header__btn--mobile {
+
+    &.header__btn--login {
+        color: var(--color-text);
+        padding: 13px 0;
+        width: 100%;
+        background-color: #EDF3FF;
+        border-radius: 16px;
+    }
+
+    &.header__btn--registration {
+        color: var(--color-white);
+        padding: 13px 0;
+        width: 100%;
+        background-color: var(--color-blue);
+    }
+}
+
+
 .header__btn {
     font-size: 16px;
     font-weight: bold;
@@ -411,12 +430,31 @@ li {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 50vw;
+    right: 0;
+    top: 0;
+    padding: 16px 16px;
+}
+
+.header__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__menu--overlay {
+    flex-direction: column;
+}
+
+.header__cross {}
+
+
+.header__authorization--mobile {
+    flex-direction: column;
+    gap: 10px;
+
 }
 
 
-.header__cross {
-    display: none;
-}
 
 .hero {
     display: flex;
