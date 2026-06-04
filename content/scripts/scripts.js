@@ -50,17 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     headerMenuItem.addEventListener('click', () => {
         subMenu.classList.toggle('active');
     });
-    // 
 
     subMenu.addEventListener('click', (event) => {
         event.stopPropagation();
     });
 
+    // 
 
+    // Куки плашка
 
+    const policy = document.querySelector('.policy__container');
+    const policyCloseBtn = document.querySelector('.policy__btn');
 
+    policyCloseBtn.addEventListener('click', () => {
+        policy.classList.toggle('disable');
+    });
 
-
+    // 
 
 
 
