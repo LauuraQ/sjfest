@@ -351,6 +351,8 @@ li {
 .header__submenu--mobile {
     display: none;
 
+
+
     &.active {
         display: flex;
     }
@@ -477,23 +479,27 @@ li {
 .header__mobile {
     position: fixed;
     background: var(--color-white);
-    display: none;
+    display: flex;
     flex-direction: column;
     text-align: center;
     width: 50vw;
-    right: 0;
+    right: 0px;
     top: 0;
     padding: 24px 20px;
     height: fit-content;
     max-height: 100vh;
     overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
 
     &.active {
         display: flex;
+        transform: translateX(0px);
     }
 
     @media (max-width:500px) {
         width: 100%;
+
     }
 }
 
