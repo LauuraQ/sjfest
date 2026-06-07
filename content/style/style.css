@@ -475,7 +475,7 @@ li {
 }
 
 .header__mobile {
-    position: absolute;
+    position: fixed;
     background: var(--color-white);
     display: none;
     flex-direction: column;
@@ -485,6 +485,8 @@ li {
     top: 0;
     padding: 24px 20px;
     height: fit-content;
+    max-height: 100vh;
+    overflow-y: auto;
 
     &.active {
         display: flex;
@@ -530,7 +532,15 @@ li {
     display: flex;
     width: 100%;
     overflow: hidden;
-    height: inherit;
+    max-height: 800px;
+    height: 100%;
+
+    @media (max-width: 1100px) {
+        position: static;
+        overflow: visible;
+        max-height: none;
+        height: auto;
+    }
 
     @media (max-width: 1024px) {
         margin-bottom: 60px;
@@ -547,19 +557,57 @@ li {
     }
 }
 
+.hero__container {
+    position: relative;
+    height: fit-content;
+}
+
+.hero__image {
+    position: absolute;
+    right: -500px;
+    top: -150px;
+
+    @media (max-width: 1100px) {
+        display: none;
+
+    }
+}
+
+.hero__mobile {
+    display: none;
+
+    @media (max-width: 1100px) {
+        display: block;
+        max-width: 100%;
+    }
+}
+
 .hero__info {
     margin: 254px auto 0 20px;
     max-width: 576px;
 
     @media (max-width: 1100px) {
-        margin: 254px auto 50px auto;
+        margin: 254px auto 0 auto;
         text-align: center;
+        padding: 0 20px;
     }
 
+    @media (max-width: 600px) {
+        margin: 154px auto 0px auto;
+    }
 }
 
 .hero__title {
     margin-bottom: 20px;
+
+    @media (max-width: 643px) {
+        max-width: 513px;
+        font-size: 40px;
+    }
+
+    @media (max-width: 340px) {
+        font-size: 28px;
+    }
 }
 
 .hero__subtitle {
@@ -575,12 +623,21 @@ li {
         margin-right: 8px;
         vertical-align: middle;
     }
+
+    @media (max-width: 600px) {
+        margin-bottom: 20px;
+    }
 }
 
 .hero__form {
     display: flex;
     gap: 10px;
     margin-bottom: 51px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center
+    }
 }
 
 .hero__input {
@@ -596,8 +653,21 @@ li {
     line-height: 100%;
 }
 
+.hero__box {
+    @media (max-width: 600px) {
+        max-width: 324px;
+        width: 100%;
+    }
+}
+
 .hero__btn {
     padding: 19px 35px;
+
+    @media (max-width: 600px) {
+        padding: 22px 0;
+        max-width: 324px;
+        width: 100%;
+    }
 }
 
 .hero__bonus {
@@ -614,6 +684,7 @@ li {
     position: fixed;
     max-width: 446px;
     padding: 10px 20px;
+    margin-left: 50px;
     border: 1px solid var(--color-border);
     background-color: var(--color-white);
     border-radius: 16px;
@@ -628,6 +699,10 @@ li {
         display: none;
     }
 
+    @media (max-width: 350px) {
+        right: 10px;
+        margin-left: 10px;
+    }
 }
 
 .policy__info {
@@ -644,20 +719,6 @@ li {
 
     &:hover {
         background-color: var(--color-btn-bg);
-    }
-}
-
-.hero__container {
-    position: relative;
-}
-
-.hero__image {
-    position: absolute;
-    right: -500px;
-    top: -150px;
-
-    @media (max-width: 1100px) {
-        position: static;
     }
 }
 
@@ -970,7 +1031,6 @@ li {
     }
 
     @media (max-width: 1087px) {
-
         max-width: 100%;
     }
 }
